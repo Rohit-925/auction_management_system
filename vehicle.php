@@ -61,7 +61,7 @@
      <h1>CATEGORIES</h1>
      <table width="90%" border="0">
        <tr>
-         <td colspan="3"><a href="#">Latest Collections 2014</a></td>
+         <td colspan="3"><a href="#">Vehicle</a></td>
         </tr>
        <tr>
          <td width="34%"><img src="images/products/cat_01.jpg" width="133" height="119" /></td>
@@ -116,17 +116,17 @@
 
         <ul>
 
-           <li><a href="#">Latest Collections</a></li>
+          <li><a href="#">Latest Collections</a></li>
 
           <li> <a href="#">2013 Collections</a></li>
 
-          <li> <a href="#">Vechile</a></li>
+          <li> <a href="#">vehicle</a></li>
 
-          <li> <a href="#">Lands</a></li>
+          <li> <a href="#">Oil Paninting</a></li>
 
           <li> <a href="#">Modren Arts</a></li>
 
-          <li> <a href="#">Books</a></li>
+          <li> <a href="#">Illussion</a></li>
 
         </ul>
 

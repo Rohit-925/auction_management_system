@@ -1,3 +1,9 @@
+<?php
+session_start();
+ include('database.php');
+$ses=$_SESSION['name'];
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,10 +21,7 @@
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 #templatemo_container #templatemo_left_section #templatemo_left_content #form3 table {
-	text-align: left;
-}
-#templatemo_container #templatemo_left_section #templatemo_left_content table {
-	font-weight: bold;
+	text-align: center;
 }
 </style>
 </head>
@@ -35,7 +38,7 @@
 
      <div id="templatemo_left_slogan"> Enjoy With Bidding Application...</div>
 
-     <div id="templatemo_latest"><a href="#"> NEW PRODUCTS </a></div>
+     <div id="templatemo_latest"><a href="#"> <?php echo "$ses";  ?> </a></div>
 
    </div>
 
@@ -43,7 +46,7 @@
 
      <div class="templatemo_topmenu">
 
-      <ul>
+       <ul>
          <li><a href="user_profile.php" >HOME</a></li>
          <li ><a href="add_product.php">ADD PRODUCT</a> </li>
           <li><a href="my_bid.php" >MY BIDDING</a></li>
@@ -58,41 +61,36 @@
 
    <div id="templatemo_left_content">
 
-     <h1>CATEGORIES</h1>
+     <h1>BIDDING DETAILS</h1>
+
+     <form id="form3" name="form3" method="post" action="">
+       <table width="100%" border="0" cellspacing="5">
+         <tr>
+        
+       </table>
+     </form>
      <table width="90%" border="0">
        <tr>
-         <td colspan="3"><a href="#">Latest Collections 2014</a></td>
-        </tr>
-       <tr>
-         <td width="34%"><img src="images/products/cat_01.jpg" width="133" height="119" /></td>
-         <td width="32%"><img src="images/products/cat_02.jpg" width="133" height="119" /></td>
-         <td width="34%"><img src="images/products/cat_03.jpg" width="133" height="119" /></td>
+         <td width="26%" height="23">PRODUCT NAME</td>
+         <td width="23%">BEDDER NAME</td>
+         <td width="20%">BIDDING PRICE</td>
+         <td width="31%">E-MAIL</td>
        </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><a href="#">2013 Collections</a></td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><img src="images/products/02.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/05.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/01.jpg" alt="" width="133" height="119" /></td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
+        <?php
+		 include('database.php');
+		$s=mysql_query("select * from bidding where email='$ses'");
+while($row=mysql_fetch_array($s))
+{
+		 ?>
+         <tr>
+          <td><a href="my_bid_details.php?id=<?php echo $row['product_name']; ?>"><?php echo $row['product_name']; ?></a></td>
+         <td><?php echo $row['name']; ?></td>
+          <td><?php echo $row['bid_price']; ?></td>
+           <td><?php echo $row['email']; ?></td>
+         </tr>
+         <?php
+}
+?>
      </table>
      <p>&nbsp;</p>
    </div>
@@ -109,31 +107,6 @@
       </form>
 
     </div>
-    <div id="templatemo_category">
-      <h2>CATEGORIES</h2>
-
-      <div class="templatemo_rightmenu">
-
-        <ul>
-
-           <li><a href="#">Latest Collections</a></li>
-
-          <li> <a href="#">2013 Collections</a></li>
-
-          <li> <a href="#">Vechile</a></li>
-
-          <li> <a href="#">Lands</a></li>
-
-          <li> <a href="#">Modren Arts</a></li>
-
-          <li> <a href="#">Books</a></li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
     <div id="templatemo_contact"><h2>QUICK CONTACT</h2>
 
       <p>Tel: 010-100-1001<br />

@@ -1,3 +1,8 @@
+<?php
+session_start();
+$ses=$_SESSION['name'];
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,10 +20,7 @@
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 #templatemo_container #templatemo_left_section #templatemo_left_content #form3 table {
-	text-align: left;
-}
-#templatemo_container #templatemo_left_section #templatemo_left_content table {
-	font-weight: bold;
+	text-align: center;
 }
 </style>
 </head>
@@ -35,7 +37,7 @@
 
      <div id="templatemo_left_slogan"> Enjoy With Bidding Application...</div>
 
-     <div id="templatemo_latest"><a href="#"> NEW PRODUCTS </a></div>
+     <div id="templatemo_latest"><a href="#"><?php echo "$ses";  ?>  </a></div>
 
    </div>
 
@@ -43,7 +45,7 @@
 
      <div class="templatemo_topmenu">
 
-      <ul>
+       <ul>
          <li><a href="user_profile.php" >HOME</a></li>
          <li ><a href="add_product.php">ADD PRODUCT</a> </li>
           <li><a href="my_bid.php" >MY BIDDING</a></li>
@@ -58,42 +60,30 @@
 
    <div id="templatemo_left_content">
 
-     <h1>CATEGORIES</h1>
-     <table width="90%" border="0">
-       <tr>
-         <td colspan="3"><a href="#">Latest Collections 2014</a></td>
-        </tr>
-       <tr>
-         <td width="34%"><img src="images/products/cat_01.jpg" width="133" height="119" /></td>
-         <td width="32%"><img src="images/products/cat_02.jpg" width="133" height="119" /></td>
-         <td width="34%"><img src="images/products/cat_03.jpg" width="133" height="119" /></td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><a href="#">2013 Collections</a></td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><img src="images/products/02.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/05.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/01.jpg" alt="" width="133" height="119" /></td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-     </table>
+     <h1>SELECT YOUR PRODUCTS TO BIDDING</h1>
+
+     <form id="form3" name="form3" method="post" action="">
+       <table width="100%" border="0" cellspacing="5">
+         <tr>
+         <?php
+		 include('database.php');
+		$s=mysql_query("select * from add_products ");
+while($row=mysql_fetch_array($s))
+{
+		 ?>
+        
+           <td width="10%" height="121" rowspan="2"><img src="upload/<?php echo $row['image']; ?>" alt="" width="130" height="121" /></td>
+           <td width="24%" height="58"><h3><?php echo $row['p_name']; ?></h3><?php echo $row['price']; ?></td>
+          </tr>
+         <tr>
+           <td height="58"><a href="bidding.php?id=<?php echo $row['p_id']; ?>">Click here to Bidding</a></td>
+         </tr>
+            <?php
+}
+
+?>
+       </table>
+     </form>
      <p>&nbsp;</p>
    </div>
 
@@ -116,7 +106,7 @@
 
         <ul>
 
-           <li><a href="#">Latest Collections</a></li>
+          <li><a href="#">Latest Collections</a></li>
 
           <li> <a href="#">2013 Collections</a></li>
 
@@ -146,7 +136,7 @@
 
   </div>
 
-  <div id="templatemo_footer">Copyright ©  Your AUCTIONING FORUM | Designed by <a href="" target="_parent" title="">Live Technologies</a></div>
+  <div id="templatemo_footer">Copyright ©  Your AUCTIONING FORUM | Designed by <a href="" target="_parent" title="">HIBS</a></div>
 
 </div>
 </body>

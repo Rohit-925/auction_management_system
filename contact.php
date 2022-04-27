@@ -15,10 +15,7 @@
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 #templatemo_container #templatemo_left_section #templatemo_left_content #form3 table {
-	text-align: left;
-}
-#templatemo_container #templatemo_left_section #templatemo_left_content table {
-	font-weight: bold;
+	text-align: center;
 }
 </style>
 </head>
@@ -43,13 +40,12 @@
 
      <div class="templatemo_topmenu">
 
-      <ul>
-         <li><a href="user_profile.php" >HOME</a></li>
-         <li ><a href="add_product.php">ADD PRODUCT</a> </li>
-          <li><a href="my_bid.php" >MY BIDDING</a></li>
-         <li class="current"><a href="category.php">CATEGORIES</a></li>
-        
-          <li><a href="index.html">LOGOUT</a></li>
+       <ul>
+         <li><a href="index.html" >HOME</a></li>
+         <li ><a href="user.php">FREE SIGN UP</a> </li>
+         <li class="current"><a href="product.php">PRODUCTS</a></li>
+         <li><a href="contact.php">CONTACT US</a></li>
+          <li><a href="admin.php">ADMIN LOGIN</a></li>
        </ul>
 
       </div>
@@ -58,43 +54,19 @@
 
    <div id="templatemo_left_content">
 
-     <h1>CATEGORIES</h1>
-     <table width="90%" border="0">
-       <tr>
-         <td colspan="3"><a href="#">Latest Collections 2014</a></td>
-        </tr>
-       <tr>
-         <td width="34%"><img src="images/products/cat_01.jpg" width="133" height="119" /></td>
-         <td width="32%"><img src="images/products/cat_02.jpg" width="133" height="119" /></td>
-         <td width="34%"><img src="images/products/cat_03.jpg" width="133" height="119" /></td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><a href="#">2013 Collections</a></td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><img src="images/products/02.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/05.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/01.jpg" alt="" width="133" height="119" /></td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-     </table>
-     <p>&nbsp;</p>
+     <h1>CONTACT US</h1>
+     <p>AUCTIONING FORUM<br />
+       <br />
+      ADDRESS : xxxxxxxx xxxxxxxxx<br />
+ xxxxxxxxxxx xxxxxxxxxx xxxxx<br />
+ xxxxxxxxx xxxxxxxxxxxx xxxxx<br />
+ <br />
+ PHONE NO : 00 000 00000<br />
+ <br />
+ E-MAIL : info@AUCTIONING FORUM.com
+<br />
+<br />
+     </p>
    </div>
 
   </div>
@@ -116,7 +88,7 @@
 
         <ul>
 
-           <li><a href="#">Latest Collections</a></li>
+          <li><a href="#">Latest Collections</a></li>
 
           <li> <a href="#">2013 Collections</a></li>
 
@@ -127,7 +99,6 @@
           <li> <a href="#">Modren Arts</a></li>
 
           <li> <a href="#">Books</a></li>
-
         </ul>
 
       </div>

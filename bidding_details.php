@@ -17,9 +17,6 @@
 #templatemo_container #templatemo_left_section #templatemo_left_content #form3 table {
 	text-align: left;
 }
-#templatemo_container #templatemo_left_section #templatemo_left_content table {
-	font-weight: bold;
-}
 </style>
 </head>
 
@@ -35,7 +32,7 @@
 
      <div id="templatemo_left_slogan"> Enjoy With Bidding Application...</div>
 
-     <div id="templatemo_latest"><a href="#"> NEW PRODUCTS </a></div>
+     <div id="templatemo_latest"><a href="#"> ADMIN LOGIN </a></div>
 
    </div>
 
@@ -43,12 +40,11 @@
 
      <div class="templatemo_topmenu">
 
-      <ul>
-         <li><a href="user_profile.php" >HOME</a></li>
-         <li ><a href="add_product.php">ADD PRODUCT</a> </li>
-          <li><a href="my_bid.php" >MY BIDDING</a></li>
-         <li class="current"><a href="category.php">CATEGORIES</a></li>
-        
+       <ul>
+         <li><a href="admin_profile.php">MEMBERS</a></li>
+         <li ><a href="view_product.php">PRODUCTS</a> </li>
+         <li class="current"><a href="bidding_details.php">BIDDING DETAILS</a></li>
+         <li class="current"><a href="report.php">REPORTS</a></li>
           <li><a href="index.html">LOGOUT</a></li>
        </ul>
 
@@ -58,42 +54,47 @@
 
    <div id="templatemo_left_content">
 
-     <h1>CATEGORIES</h1>
-     <table width="90%" border="0">
-       <tr>
-         <td colspan="3"><a href="#">Latest Collections 2014</a></td>
-        </tr>
-       <tr>
-         <td width="34%"><img src="images/products/cat_01.jpg" width="133" height="119" /></td>
-         <td width="32%"><img src="images/products/cat_02.jpg" width="133" height="119" /></td>
-         <td width="34%"><img src="images/products/cat_03.jpg" width="133" height="119" /></td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><a href="#">2013 Collections</a></td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><img src="images/products/02.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/05.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/01.jpg" alt="" width="133" height="119" /></td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-     </table>
+     <h1>PRODUCT  LIST</h1>
+
+     <form action="add_product_code.php" method="post" enctype="multipart/form-data" name="form3" id="form3">
+       <table width="100%" border="0">
+         <tr>
+           
+           <td width="107"><a href="a">PRODUCT NAME</a></td>
+           <td width="88"><a href="a">CATEGORIES</a><a href="a"></a></td>
+           <td width="50"><a href="a">PRICE</a></td>
+           <td width="54"><a href="a">BUDDING PRICE</a></td>
+           <td width="54"><a href="a">EMAIL</a></td>
+           <td width="50"><a href="a">DELETE</a></td>
+          </tr>
+           <?php
+include 'database.php';
+
+					
+$ress="select * from bidding";
+$ret=mysql_query($ress) or die(mysql_error());
+   $i=0;
+   $x=mysql_num_rows($ret);
+  
+while($row=mysql_fetch_array($ret)) 
+{
+?>
+    <tr>
+   
+    <td><?php echo $row['product_name']; ?></td>
+    <td><?php echo $row['category']; ?></td>
+	<td><?php echo $row['price']; ?></td>
+    <td><?php echo $row['bid_price']; ?></td>
+   	<td><?php echo $row['email']; ?></td>
+   	
+    </tr>
+    
+    <?php
+	$i++;
+	}
+	?>
+       </table>
+     </form>
      <p>&nbsp;</p>
    </div>
 
@@ -116,7 +117,7 @@
 
         <ul>
 
-           <li><a href="#">Latest Collections</a></li>
+          <li><a href="#">Latest Collections</a></li>
 
           <li> <a href="#">2013 Collections</a></li>
 

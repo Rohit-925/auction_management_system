@@ -17,9 +17,6 @@
 #templatemo_container #templatemo_left_section #templatemo_left_content #form3 table {
 	text-align: left;
 }
-#templatemo_container #templatemo_left_section #templatemo_left_content table {
-	font-weight: bold;
-}
 </style>
 </head>
 
@@ -58,42 +55,55 @@
 
    <div id="templatemo_left_content">
 
-     <h1>CATEGORIES</h1>
-     <table width="90%" border="0">
-       <tr>
-         <td colspan="3"><a href="#">Latest Collections 2014</a></td>
-        </tr>
-       <tr>
-         <td width="34%"><img src="images/products/cat_01.jpg" width="133" height="119" /></td>
-         <td width="32%"><img src="images/products/cat_02.jpg" width="133" height="119" /></td>
-         <td width="34%"><img src="images/products/cat_03.jpg" width="133" height="119" /></td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><a href="#">2013 Collections</a></td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td><img src="images/products/02.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/05.jpg" width="133" height="119" /></td>
-         <td><img src="images/products/01.jpg" alt="" width="133" height="119" /></td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-       <tr>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td>&nbsp;</td>
-       </tr>
-     </table>
+     <h1>ADD PRODUCT</h1>
+
+     <form action="add_product_code.php" method="post" enctype="multipart/form-data" name="form3" id="form3">
+       <table width="100%" border="0">
+         <tr>
+           <td>USERNAME</td>
+           <td>:</td>
+           <td><input name="p_name2" type="text" id="p_name2" size="30" /></td>
+         </tr>
+         <tr>
+           <td width="26%">PRODUCT NAME</td>
+           <td width="7%">:</td>
+           <td width="67%"><label for="p_name"></label>
+            <input name="p_name" type="text" id="p_name" size="30" /></td>
+         </tr>
+         <tr>
+           <td>CATEGORIES</td>
+           <td>:</td>
+           <td><input name="catry" type="text" id="catry" size="30" /></td>
+         </tr>
+         <tr>
+           <td>PRICE</td>
+           <td>:</td>
+           <td><input name="price" type="text" id="price" size="30" /></td>
+         </tr>
+         <tr>
+           <td>UPLOAD IMAGE</td>
+           <td>:</td>
+           <td><label for="file"></label>
+            <input type="file" name="file" id="file" /></td>
+         </tr>
+         <tr>
+           <td>DESCRIPTION</td>
+           <td>:</td>
+           <td><label for="desp"></label>
+            <textarea name="desp" id="desp" cols="24" rows="4"></textarea></td>
+         </tr>
+         <tr>
+           <td>&nbsp;</td>
+           <td>&nbsp;</td>
+           <td><input type="submit" name="button" id="button" value="Submit" /></td>
+         </tr>
+         <tr>
+           <td>&nbsp;</td>
+           <td>&nbsp;</td>
+           <td>&nbsp;</td>
+         </tr>
+       </table>
+     </form>
      <p>&nbsp;</p>
    </div>
 
@@ -127,7 +137,6 @@
           <li> <a href="#">Modren Arts</a></li>
 
           <li> <a href="#">Books</a></li>
-
         </ul>
 
       </div>
